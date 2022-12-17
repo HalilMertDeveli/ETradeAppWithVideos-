@@ -3,6 +3,8 @@ import 'package:e_trade_app_with_flutter_way/size_config.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatelessWidget {
+  static String routeName = "/spllash";
+
   const SplashScreen({super.key});
 
   @override
