@@ -60,6 +60,24 @@ class _BodyState extends State<Body> {
                       splashData.length,
                       (index) => buildDot(index: index),
                     ),
+                  ),
+                  SizedBox(
+                    height: 100,
+                  ),
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(20),
+                    child: Container(
+                      height: 50,
+                      width: 300,
+                      color: kPrimaryColor,
+                      child: MaterialButton(
+                        onPressed: () {},
+                        child: Text(
+                          'Continue',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ),
                   )
                 ],
               ),
