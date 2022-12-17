@@ -1,7 +1,5 @@
-import 'package:e_trade_app_with_flutter_way/companents/default_button.dart';
 import 'package:e_trade_app_with_flutter_way/constraints.dart';
 import 'package:e_trade_app_with_flutter_way/screens/splash/companets/splash_content.dart';
-import 'package:e_trade_app_with_flutter_way/size_config.dart';
 import 'package:flutter/material.dart';
 
 class Body extends StatefulWidget {
@@ -54,29 +52,16 @@ class _BodyState extends State<Body> {
                 )),
             Expanded(
               flex: 2,
-              child: Padding(
-                padding: EdgeInsets.symmetric(
-                    horizontal: getProportionateScreenWidth(20)),
-                child: Column(
-                  children: [
-                    Spacer(),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: List.generate(
-                        splashData.length,
-                        (index) => buildDot(index: index),
-                      ),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: List.generate(
+                      splashData.length,
+                      (index) => buildDot(index: index),
                     ),
-                    Spacer(
-                      flex: 3,
-                    ),
-                    DefaultButton(
-                      text: 'Continue',
-                      press: () {},
-                    ),
-                    Spacer()
-                  ],
-                ),
+                  )
+                ],
               ),
             ),
           ],
