@@ -1,5 +1,6 @@
 import 'package:e_trade_app_with_flutter_way/companents/default_button.dart';
 import 'package:e_trade_app_with_flutter_way/constraints.dart';
+import 'package:e_trade_app_with_flutter_way/screens/sign_in/sign_in_screen.dart';
 import 'package:e_trade_app_with_flutter_way/screens/splash/companets/splash_content.dart';
 import 'package:e_trade_app_with_flutter_way/size_config.dart';
 import 'package:flutter/material.dart';
@@ -72,7 +73,9 @@ class _BodyState extends State<Body> {
                     ),
                     DefaultButton(
                       text: 'Continue',
-                      press: () {},
+                      press: () {
+                        Navigator.pushNamed(context, SignInScreen.routeName);
+                      },
                     ),
                     Spacer()
                   ],

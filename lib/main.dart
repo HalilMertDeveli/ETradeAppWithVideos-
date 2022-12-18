@@ -1,7 +1,9 @@
 import 'package:e_trade_app_with_flutter_way/constraints.dart';
 import 'package:e_trade_app_with_flutter_way/routes.dart';
 import 'package:e_trade_app_with_flutter_way/screens/splash/splash_screen.dart';
+import 'package:e_trade_app_with_flutter_way/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,14 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-        scaffoldBackgroundColor: Colors.white,
-        fontFamily: "Muli",
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-        textTheme: TextTheme(
-            bodyText1: TextStyle(color: kTextColor),
-            bodyText2: TextStyle(color: kTextColor)),
-      ),
+      theme: theme(),
       // home: SplashScreen(),
       initialRoute: SplashScreen.routeName,
       routes: routes,
