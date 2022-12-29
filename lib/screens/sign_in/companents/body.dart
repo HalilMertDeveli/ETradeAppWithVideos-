@@ -48,6 +48,8 @@ class SignForm extends StatefulWidget {
 class _SignFormState extends State<SignForm> {
   final _formKey = GlobalKey<FormState>();
   final List<String> errors = [];
+  String? email;
+  String? password;
 
   @override
   Widget build(BuildContext context) {
@@ -64,6 +66,9 @@ class _SignFormState extends State<SignForm> {
             height: getProportionateScreenHeight(20),
           ),
           FormError(errors: errors),
+          SizedBox(
+            height: getProportionateScreenHeight(20),
+          ),
           DefaultButton(
             text: 'Continue',
             press: () {
@@ -79,19 +84,47 @@ class _SignFormState extends State<SignForm> {
 
   TextFormField buildPassworFormField() {
     return TextFormField(
+      onSaved: (newValue) => password = newValue,
+      onChanged: (value) {
+        if (value.isNotEmpty && errors.contains(kPassNullError)) {
+          setState(() {
+            errors.remove(kPassNullError);
+          });
+        } else if (value.length >= 8 && errors.contains(kShortPassError)) {
+          setState(() {
+            errors.remove(kShortPassError);
+          });
+        }
+        return null;
+      },
+      validator: (value) {
+        if (value != null) {
+          if (value.isEmpty && !errors.contains(kPassNullError)) {
+            setState(() {
+              errors.add(kPassNullError);
+            });
+          } else if (value.length < 8 && !errors.contains(kShortPassError)) {
+            setState(() {
+              errors.add(kShortPassError);
+            });
+          }
+        }
+        return null;
+      },
       obscureText: true,
       keyboardType: TextInputType.emailAddress,
       decoration: InputDecoration(
-        labelText: 'Password',
-        hintText: "Enter your password ",
-        // floatingLabelBehavior: FloatingLabelBehavior.always,
-        suffixIcon: CostumSuffixIcon(svgIcon: 'assets/icons/Lock.svg'),
-      ),
+          labelText: 'Password',
+          hintText: 'Enter your Password',
+          suffixIcon: CostumSuffixIcon(
+            svgIcon: 'assets/icons/Lock.svg',
+          )),
     );
   }
 
   TextFormField buildEmailTextField() {
     return TextFormField(
+      onSaved: (newValue) => email = newValue,
       onChanged: (value) {
         if (value.isNotEmpty && errors.contains(kEmailNullError)) {
           setState(() {
@@ -117,8 +150,8 @@ class _SignFormState extends State<SignForm> {
               errors.add(kInvalidEmailError);
             });
           }
-          return null;
         }
+        return null;
       },
       keyboardType: TextInputType.emailAddress,
       decoration: InputDecoration(
