@@ -1,4 +1,5 @@
 import 'package:e_trade_app_with_flutter_way/companents/social_card.dart';
+import 'package:e_trade_app_with_flutter_way/constraints.dart';
 import 'package:e_trade_app_with_flutter_way/screens/sign_in/companents/sign_from.dart';
 import 'package:e_trade_app_with_flutter_way/size_config.dart';
 import 'package:flutter/material.dart';
@@ -50,6 +51,22 @@ class Body extends StatelessWidget {
                     //operation is login with twitter book
                   },
                 ),
+              ],
+            ),
+            Row(
+              children: [
+                Text(
+                  "Don't Have an account ? ",
+                  style: TextStyle(
+                    fontSize: getProportionateScreenWidth(16),
+                  ),
+                ),
+                Text(
+                  'sign up',
+                  style: TextStyle(
+                      fontSize: getProportionateScreenWidth(16),
+                      color: kPrimaryColor),
+                )
               ],
             )
           ],
