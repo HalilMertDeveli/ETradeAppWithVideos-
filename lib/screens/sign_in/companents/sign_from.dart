@@ -106,7 +106,7 @@ class _SignFormState extends State<SignForm> {
     );
   }
 
-  TextFormField buildEmailTextField() {
+  TextFormField   buildEmailTextField() {
     return TextFormField(
       onSaved: (newValue) => email = newValue,
       onChanged: (value) {
