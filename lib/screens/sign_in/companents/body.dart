@@ -1,5 +1,7 @@
+import 'package:e_trade_app_with_flutter_way/companents/no_account_text.dart';
 import 'package:e_trade_app_with_flutter_way/companents/social_card.dart';
 import 'package:e_trade_app_with_flutter_way/constraints.dart';
+import 'package:e_trade_app_with_flutter_way/screens/forgot_password/forgot_password_screen.dart';
 import 'package:e_trade_app_with_flutter_way/screens/sign_in/companents/sign_from.dart';
 import 'package:e_trade_app_with_flutter_way/size_config.dart';
 import 'package:flutter/material.dart';
@@ -66,23 +68,7 @@ class Body extends StatelessWidget {
               SizedBox(
                 height: getProportionateScreenHeight(20),
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "Don't Have an account ? ",
-                    style: TextStyle(
-                      fontSize: getProportionateScreenWidth(16),
-                    ),
-                  ),
-                  Text(
-                    'sign up',
-                    style: TextStyle(
-                        fontSize: getProportionateScreenWidth(16),
-                        color: kPrimaryColor),
-                  )
-                ],
-              )
+              NoAccountText()
             ],
           ),
         ),

@@ -2,6 +2,7 @@ import 'package:e_trade_app_with_flutter_way/companents/custom_suffix_icon.dart'
 import 'package:e_trade_app_with_flutter_way/companents/default_button.dart';
 import 'package:e_trade_app_with_flutter_way/companents/form_error.dart';
 import 'package:e_trade_app_with_flutter_way/constraints.dart';
+import 'package:e_trade_app_with_flutter_way/screens/forgot_password/forgot_password_screen.dart';
 import 'package:e_trade_app_with_flutter_way/size_config.dart';
 import 'package:flutter/material.dart';
 
@@ -43,9 +44,13 @@ class _SignFormState extends State<SignForm> {
               ),
               Text('Remember me'),
               Spacer(),
-              Text(
-                'Forgot your Password',
-                style: TextStyle(decoration: TextDecoration.underline),
+              GestureDetector(
+                onTap: () =>
+                    Navigator.pushNamed(context, ForgotPasswordScreen.routName),
+                child: Text(
+                  'Forgot your Password',
+                  style: TextStyle(decoration: TextDecoration.underline),
+                ),
               ),
             ],
           ),
@@ -106,7 +111,7 @@ class _SignFormState extends State<SignForm> {
     );
   }
 
-  TextFormField   buildEmailTextField() {
+  TextFormField buildEmailTextField() {
     return TextFormField(
       onSaved: (newValue) => email = newValue,
       onChanged: (value) {
