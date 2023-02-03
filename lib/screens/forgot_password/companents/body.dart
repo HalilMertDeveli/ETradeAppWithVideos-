@@ -97,7 +97,7 @@ class _ForgetPasswordFormState extends State<ForgetPasswordForm> {
             decoration: InputDecoration(
               labelText: 'E-mail',
               hintText: "Enter your e-mail ",
-              // floatingLabelBehavior: FloatingLabelBehavior.always,
+              // floatingLabelBehavior: FloatingLabelBehavior.always, was here
               suffixIcon: CostumSuffixIcon(svgIcon: 'assets/icons/Mail.svg'),
             ),
           ),
