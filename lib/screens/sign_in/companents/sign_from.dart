@@ -46,8 +46,8 @@ class _SignFormState extends State<SignForm> {
               Text('Remember me'),
               Spacer(),
               GestureDetector(
-                onTap: () =>
-                    Navigator.pushNamed(context, ForgotPasswordScreen.routName),
+                onTap: () => Navigator.pushNamed(
+                    context, ForgotPasswordScreen.routeName),
                 child: Text(
                   'Forgot your Password',
                   style: TextStyle(decoration: TextDecoration.underline),
@@ -63,7 +63,7 @@ class _SignFormState extends State<SignForm> {
             text: 'Continue',
             press: () {
               if (_formKey.currentState!.validate()) {
-                Navigator.pushNamed(context, LoginSuccessScreen.rootName);
+                Navigator.pushNamed(context, LoginSuccessScreen.routeName);
                 _formKey.currentState!.save();
                 // We will direct the user Login succes but you do valid email operations
               }

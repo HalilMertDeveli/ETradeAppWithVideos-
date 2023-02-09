@@ -4,7 +4,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
 class LoginSuccessScreen extends StatelessWidget {
-  static String rootName = "/login_success";
+  static String routeName = "/login_success";
   const LoginSuccessScreen({super.key});
 
   @override

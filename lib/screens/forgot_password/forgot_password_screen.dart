@@ -2,7 +2,7 @@ import 'package:e_trade_app_with_flutter_way/screens/forgot_password/companents/
 import 'package:flutter/material.dart';
 
 class ForgotPasswordScreen extends StatelessWidget {
-  static String routName = "/forgot_pasword";
+  static String routeName = "/forgot_pasword";
 
   const ForgotPasswordScreen({super.key});
 

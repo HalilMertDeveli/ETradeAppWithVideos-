@@ -1,5 +1,7 @@
 import 'package:e_trade_app_with_flutter_way/constraints.dart';
 import 'package:e_trade_app_with_flutter_way/screens/forgot_password/forgot_password_screen.dart';
+import 'package:e_trade_app_with_flutter_way/screens/sign_in/sign_in_screen.dart';
+import 'package:e_trade_app_with_flutter_way/screens/sign_up/sign_up_screen.dart';
 import 'package:e_trade_app_with_flutter_way/size_config.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +22,9 @@ class NoAccountText extends StatelessWidget {
           ),
         ),
         GestureDetector(
-          onTap: () {},
+          onTap: () {
+            Navigator.pushNamed(context, SignUpScreen.routeName);
+          },
           child: Text(
             'sign up',
             style: TextStyle(
