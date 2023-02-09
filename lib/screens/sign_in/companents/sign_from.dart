@@ -3,6 +3,7 @@ import 'package:e_trade_app_with_flutter_way/companents/default_button.dart';
 import 'package:e_trade_app_with_flutter_way/companents/form_error.dart';
 import 'package:e_trade_app_with_flutter_way/constraints.dart';
 import 'package:e_trade_app_with_flutter_way/screens/forgot_password/forgot_password_screen.dart';
+import 'package:e_trade_app_with_flutter_way/screens/login_success/login_success_screen.dart';
 import 'package:e_trade_app_with_flutter_way/size_config.dart';
 import 'package:flutter/material.dart';
 
@@ -62,7 +63,9 @@ class _SignFormState extends State<SignForm> {
             text: 'Continue',
             press: () {
               if (_formKey.currentState!.validate()) {
+                Navigator.pushNamed(context, LoginSuccessScreen.rootName);
                 _formKey.currentState!.save();
+                // We will direct the user Login succes but you do valid email operations
               }
             },
           )
